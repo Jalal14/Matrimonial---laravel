@@ -1,0 +1,134 @@
+body{	margin-top: 55px;	background-color: #EDEDED;}
+
+.error{ color: red; }
+
+.success{ color: green; }
+
+.navbar-brand img{	height: 35px; }
+
+.navbar-default{background-color: #AAAAAA;}
+
+#myNavbar li a{ color:  #e1ffff;}
+
+
+#myCarousel img{ height: 300px;	width: 100%; }
+
+#search-box{
+	border: 1px solid lightgray;
+	height: 250px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.searched-body{ padding-top: 50px; }
+
+.searched-profile{
+	background-color: white;
+	border: 1px solid;
+	border-radius: 10px;
+	margin: 10px;
+}
+.user-image{
+	/*border: 0.5px solid lightgray;*/
+	margin: 5px;
+	float: left;
+	height: 200px;
+	width: 200px;
+}
+.friend-image{
+	margin: 5px;
+	float: left;
+	height: 100px;
+	width: 100px;
+}
+
+.user-info{	float: left;	font-size: 15px;	padding: 20px; }
+
+.user-name{	font-size: 20px; }
+
+#left-bar{	margin-left: -15px; background-color: #AAAAAA; }
+
+.nav-side-menu li,
+.nav-side-menu li .sub-menu li {
+	list-style: none;
+	cursor: pointer;	
+	line-height: 35px;	
+	border-bottom: 1px solid gray;
+}
+
+.nav-side-menu li:hover,
+.nav-side-menu li .sub-menu li:hover{	border-left: 3px solid #d19b3d;	background-color: #4f5b69; }
+
+.nav-side-menu li a {  text-decoration: none;  color: #111111; }
+
+#conversation-area{
+	position: fixed;
+    margin-bottom: 0px;
+	padding: 1%;
+	border: 1px solid gray;
+	bottom: 5%;
+	right: 0;
+	top: 200px;
+	overflow-y: scroll;
+}
+
+#message-box{
+	position: fixed;
+	bottom: 20px;
+	right: 5px;
+}
+
+#text-box{
+    width: 85%;
+}
+
+#send-button{
+float: right;
+width: 14%;
+}
+
+.texted-user-img{
+border-radius: 30px;
+float: right;
+height: 30px;
+width: 30px;
+}
+
+.texted-friend-img{
+border-radius: 30px;
+float: left;
+height: 30px;
+width: 30px;
+}
+
+.message-area{
+position: relative;
+display: inline-block;
+width: 100%;
+overflow-wrap: break-word;
+}
+
+.user-text-area{
+width: auto;
+max-width: 80%;
+float: right;
+padding: 0px 5px;
+}
+
+.friend-text-area{
+width: auto;
+max-width: 80%;
+float: left;
+padding: 0px 5px;
+}
+
+.user-text{
+background-color: #98cbe8;
+border-radius: 10px 0px 10px 5px;
+padding: 5px;
+}
+
+.friend-text{
+background-color:#2ab27b;
+border-radius: 0px 10px 5px 10px;
+padding: 5px;
+}

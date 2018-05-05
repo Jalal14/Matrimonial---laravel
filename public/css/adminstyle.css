@@ -1,0 +1,109 @@
+body{	margin-top: 55px;	background-color: #EDEDED;}
+/*.navbar-header{
+	float: left;
+}
+*/
+/*#account-nav{
+	float: right;
+	margin: 0px;
+	margin-right: 10px;
+}*/
+/*.pull-left{
+	margin: 15px 0px 0px 15px;
+}
+@media (max-width: 768px){
+	#account-nav > ul > li{
+		float: left !important;
+	}
+}*/
+
+.error{	color: red; }
+
+#login-panel{ margin: 10px 350px; min-width: 40%;}
+
+#left-menu{	margin-left: -15px; }
+
+.row-offcanvas{	height: 100%; }
+
+.nav-side-menu{
+	overflow: auto;
+	position: fixed;
+	top: 50px;
+	padding-top: 10px;
+	width: 250px;
+	height: 100%;
+	background-color: #181c20;
+	z-index: 10;
+}
+
+.nav-side-menu li,
+.nav-side-menu li .sub-menu li {	list-style: none;	cursor: pointer; }
+
+.nav-side-menu li,
+.nav-side-menu li .sub-menu li {	line-height: 35px;	border-bottom: 1px solid #e1ffff; }
+
+.nav-side-menu li:hover,
+.nav-side-menu li .sub-menu li:hover{	border-left: 3px solid #d19b3d;	background-color: #4f5b69; }
+
+.nav-side-menu li a {  text-decoration: none;  color: #e1ffff; }
+
+@media screen and (max-width: 768px) {
+	.row-offcanvas {		position: relative;		transition: all 0.25s ease-out;		width:calc(100% + 250px);	}
+
+	.row-offcanvas-left	{		left: -250px;	}
+
+	.row-offcanvas-left.active {		left: 0;	}
+}
+
+#main {	margin-left: 250px;	height:100%; }
+
+.page-header{
+	vertical-align: middle;
+	margin: 20px 0px 15px 0px;
+	padding: 0px;
+	border-bottom: 1px solid gray;
+}
+
+.page-header h1{	color: #4c4d5a; }
+
+.activity-banner{	height: 50px; }
+
+.tile {	margin-bottom: 15px;	border-radius: 3px;	color: #FFFFFF; }
+
+.tile-primary{	background-color: #1b80c2; }
+
+.tile-heading{	padding: 5px 8px;	color: white;	background-color: rgba(255,255,255,0.1); }
+
+.tile .tile-heading .pull-right {	transition: all 1s;	opacity: 0.7; }
+
+.pull-right{	float: right;	margin-right: 10px; }
+
+.tile-body {	padding: 15px;	color: #FFFFFF;	line-height: 48px;	text-shadow: 0 -1px 0 rgba(0,0,0,.4); }
+
+.tile-body img{	height: 128px;	width: 128px; }
+
+.tile-footer {	padding: 5px 8px;	background-color: rgba(0,0,0,0.1); }
+
+.tile-footer a{	color: white; }
+
+.tile-footer a:hover{	text-decoration: none; }
+
+.image-content{	height: 68px;	width: 68px; }
+
+.heading > h3{	background-color: #F37020;	text-align: center;	padding: 5px; }
+
+.user-image{
+	/*border: 0.5px solid lightgray;*/
+	margin: 5px;
+	float: left;
+	height: 160px;
+	width: 160px;
+}
+
+.user-info{	float: left;	font-size: 15px;	padding: 10px; }
+
+.user-name{	font-size: 20px; }
+
+.user-profile{	background-color: white;	border: 1px solid;	border-radius: 10px;	margin: 10px; }
+
+.table-image > img{ height: 50px; width: 50px; padding: 2px;}
