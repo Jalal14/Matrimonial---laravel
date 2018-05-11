@@ -88,6 +88,41 @@ class UserController extends Controller
         $friend->bgroup = Blood::find($friend->blood)->bgroup;
         $friend->gender_name = Gender::find($friend->gender)->gender;
         $friend->religion_name = Religion::find($friend->religion)->name;
+        $per_address = DB::table('tbl_per_address')
+                                ->join('tbl_police_station', 'tbl_per_address.per_police_station', '=', 'tbl_police_station.id')
+                                ->join('tbl_district', 'tbl_police_station.district', '=', 'tbl_district.id')
+                                ->join('tbl_division', 'tbl_district.division', '=', 'tbl_division.id')
+                                ->select('tbl_per_address.*','tbl_district.name as district','tbl_division.name as division')
+                                ->where('per_uid',$friend->uid)
+                                ->first();
+        $pr_address = DB::table('tbl_pr_address')
+                                ->join('tbl_police_station', 'tbl_pr_address.pr_police_station', '=', 'tbl_police_station.id')
+                                ->join('tbl_district', 'tbl_police_station.district', '=', 'tbl_district.id')
+                                ->join('tbl_division', 'tbl_district.division', '=', 'tbl_division.id')
+                                ->select('tbl_pr_address.*','tbl_district.name as district','tbl_division.name as division')
+                                ->where('pr_uid',$friend->uid)
+                                ->first();
+        $education = DB::table('tbl_education')
+                        ->join('tbl_degree', 'tbl_education.degree', '=', 'tbl_degree.id')
+                        ->where('tbl_education.uid', $friend->uid)
+                        ->first();
+        $job = Job::find($friend->uid);
+        $interestList = DB::table('tbl_user_interest')
+                                ->join('tbl_interest', 'tbl_user_interest.interest', '=', 'tbl_interest.id')
+                                ->where('tbl_user_interest.uid', $friend->uid)
+                                ->get();
+        $hobbyList = DB::table('tbl_user_hobby')
+                                ->join('tbl_hobby', 'tbl_user_hobby.hobby', '=', 'tbl_hobby.id')
+                                ->where('tbl_user_hobby.uid', $friend->uid)
+                                ->get();
+        $musicList = DB::table('tbl_user_music')
+                                ->join('tbl_music', 'tbl_user_music.music', '=', 'tbl_music.id')
+                                ->where('tbl_user_music.uid', $friend->uid)
+                                ->get();
+        $sportList = DB::table('tbl_user_sports')
+                                ->join('tbl_sports', 'tbl_user_sports.sport', '=', 'tbl_sports.id')
+                                ->where('tbl_user_sports.uid', $friend->uid)
+                                ->get();
         $friend->friend = Friend::where([
                                     ['sender',$friend->uid],
                                     ['send_to', $request->session()->get('loggedUser')]
@@ -116,6 +151,14 @@ class UserController extends Controller
                                 ])
                                 ->get();
         return view('user.public-profile')
+                ->with('per_address', $per_address)
+                ->with('pr_address', $pr_address)
+                ->with('education', $education)
+                ->with('job', $job)
+                ->with('interestList', $interestList)
+                ->with('hobbyList', $hobbyList)
+                ->with('sportList', $sportList)
+                ->with('musicList', $musicList)
                 ->with('friend', $friend)
                 ->with('user', $user)
                 ->with('msgList', $msgList);

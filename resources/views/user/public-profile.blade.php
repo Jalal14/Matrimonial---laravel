@@ -61,6 +61,96 @@
 						<td>:</td>
 						<td><label>{{$friend->email}}</label></td>
 					</tr>
+					@if($friend->friend != null)
+                        @if($pr_address != null)
+                            <tr><td colspan="3"><hr/></td></tr>
+                            <tr>
+                                <td>Present address</td>
+                                <td>:</td>
+                                <td><label>District: {{$pr_address->district}}, Division: {{$pr_address->division}}</label></td>
+                            </tr>
+                        @endif
+                        @if($pr_address != null)
+                            <tr><td colspan="3"><hr/></td></tr>
+                            <tr>
+                                <td>Permanent address</td>
+                                <td>:</td>
+                                <td><label>District: {{$per_address->district}}, Division: {{$per_address->division}}</label></td>
+                            </tr>
+                        @endif
+                        @if($education != null)
+                            <tr><td colspan="3"><hr/></td></tr>
+                            <tr>
+                                <td>Education</td>
+                                <td>:</td>
+                                <td><label>Degree: {{$education->degree}}, Field: {{$education->field}}, Institution: {{$education->institution}},Passing Year: {{$education->passing_year}}</label></td>
+                            </tr>
+                        @endif
+                        @if($job != null)
+                            <tr><td colspan="3"><hr/></td></tr>
+                            <tr>
+                                <td>Occupation</td>
+                                <td>:</td>
+                                <td><label>Designation: {{$job->designation}}, Company: {{$job->company}}, Join: {{$job->joinning_date}}</label></td>
+                            </tr>
+                        @endif
+					@endif
+                    @if($interestList != null)
+                        <tr><td colspan="3"><hr/></td></tr>
+                        <tr>
+                            <td>Interests</td>
+                            <td>:</td>
+                            <td><label>
+                                    @forelse($interestList as $interest)
+                                        {{$interest->name}},
+                                    @empty
+                                    @endforelse
+                                </label>
+                            </td>
+                        </tr>
+                    @endif
+                    @if($hobbyList != null)
+                        <tr><td colspan="3"><hr/></td></tr>
+                        <tr>
+                            <td>Hobbies</td>
+                            <td>:</td>
+                            <td><label>
+                                    @forelse($hobbyList as $hobby)
+                                        {{$hobby->name}},
+                                    @empty
+                                    @endforelse
+                                </label>
+                            </td>
+                        </tr>
+                    @endif
+                    @if($musicList != null)
+                        <tr><td colspan="3"><hr/></td></tr>
+                        <tr>
+                            <td>Musics</td>
+                            <td>:</td>
+                            <td><label>
+                                    @forelse($musicList as $music)
+                                        {{$music->name}},
+                                    @empty
+                                    @endforelse
+                                </label>
+                            </td>
+                        </tr>
+                    @endif
+                    @if($sportList != null)
+                        <tr><td colspan="3"><hr/></td></tr>
+                        <tr>
+                            <td>Sports</td>
+                            <td>:</td>
+                            <td><label>
+                                    @forelse($sportList as $sport)
+                                        {{$sport->name}},
+                                    @empty
+                                    @endforelse
+                                </label>
+                            </td>
+                        </tr>
+                    @endif
 					<tr><td colspan="3"><hr/></td></tr>
 					<tr>
 						<form method="post">
