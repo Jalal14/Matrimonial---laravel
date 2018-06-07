@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2018 at 10:11 PM
+-- Generation Time: Jun 07, 2018 at 04:50 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -48,7 +48,7 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`aid`, `fname`, `mname`, `lname`, `uname`, `dob`, `blood`, `gender`, `email`, `number1`, `number2`, `password`, `propic`, `joinning_date`) VALUES
-(1, 'admin first', '', 'admin last', 'admin', '1995-01-11', 3, 2, 'admin@service.com', '016', '015', 'admin', 'propic/admin.jpg', '2017-01-01');
+(1, 'admin first', '', 'admin last', 'admin', '1995-01-11', 3, 2, 'jalaluddin.csse14@gmail.com', '016', '015', 'admin', 'propic/admin.jpg', '2017-01-01');
 
 -- --------------------------------------------------------
 
@@ -193,7 +193,7 @@ CREATE TABLE `tbl_education` (
 --
 
 INSERT INTO `tbl_education` (`uid`, `degree`, `institution`, `field`, `passing_year`) VALUES
-(1, 3, 'AIUB', 'Computer science', NULL),
+(1, 3, '', '', '0000-00-00'),
 (2, 1, 'IUB', 'asdf', '2017-12-01'),
 (3, 2, 'Tamirul millat', 'Arts', '2017-12-01'),
 (4, 3, NULL, 'CSSE', NULL);
@@ -222,7 +222,7 @@ CREATE TABLE `tbl_family` (
 --
 
 INSERT INTO `tbl_family` (`uid`, `type`, `father_name`, `father_occupation`, `father_income`, `mother_name`, `mother_occupation`, `mother_income`, `contact`, `siblings`) VALUES
-(1, 1, 'Father', NULL, 0, 'Mother', NULL, 0, NULL, 1),
+(1, 3, 'Fahter', '', 0, '', '', 0, '', 0),
 (2, 1, 'name', 'job', 100, 'name', 'occ', 10, '02', 2),
 (3, 1, 'fat', 'focc', 500, 'mot', 'mocc', 500, '03', 2),
 (4, 3, 'Father', 'Teacher', NULL, 'Mother', NULL, NULL, NULL, 0);
@@ -270,7 +270,9 @@ INSERT INTO `tbl_favorite` (`id`, `uid`, `favorite_user`, `date`) VALUES
 (5, 4, 5, '2017-12-19'),
 (6, 7, 3, '2017-12-19'),
 (7, 10, 5, '2017-12-23'),
-(8, 16, 3, '2018-05-05');
+(8, 16, 3, '2018-05-05'),
+(9, 1, 2, '2018-05-11'),
+(10, 7, 5, '2018-05-11');
 
 -- --------------------------------------------------------
 
@@ -292,11 +294,10 @@ CREATE TABLE `tbl_friend` (
 INSERT INTO `tbl_friend` (`id`, `sender`, `send_to`, `date`) VALUES
 (12, 2, 5, '2017-12-19'),
 (20, 2, 9, '2018-03-04'),
-(23, 1, 2, '2018-03-07'),
 (24, 1, 12, '2018-05-02'),
 (25, 14, 9, '2018-05-03'),
 (26, 3, 2, '2018-05-05'),
-(27, 1, 7, '2018-05-05');
+(29, 7, 1, '2018-05-11');
 
 -- --------------------------------------------------------
 
@@ -404,7 +405,7 @@ CREATE TABLE `tbl_job` (
 --
 
 INSERT INTO `tbl_job` (`uid`, `designation`, `company`, `joinning_date`, `annual_income`) VALUES
-(1, 'Jr. SE', 'Webhost', '2011-02-02', NULL),
+(1, '', '', '0000-00-00', NULL),
 (2, 'CEO', 'Simplex hub', '2016-12-01', 30000000),
 (3, 'Intern', 'AIUB', '2017-12-01', 130),
 (4, 'Jr. SE', NULL, '2018-05-01', NULL);
@@ -448,7 +449,8 @@ CREATE TABLE `tbl_marital_status` (
 --
 
 INSERT INTO `tbl_marital_status` (`id`, `status`) VALUES
-(1, 'single');
+(2, 'Married'),
+(1, 'Single');
 
 -- --------------------------------------------------------
 
@@ -552,7 +554,35 @@ INSERT INTO `tbl_message` (`id`, `sender`, `send_to`, `time`, `message`, `is_see
 (200, 7, 3, '2018-05-05 02:56:17', 'there is another problem', 1),
 (201, 2, 3, '2018-05-05 09:15:48', 'hi', 1),
 (202, 3, 2, '2018-05-05 09:16:00', 'ki obostha?', 1),
-(203, 2, 3, '2018-05-05 09:16:12', 'eito', 1);
+(203, 2, 3, '2018-05-05 09:16:12', 'eito', 1),
+(204, 3, 2, '2018-05-06 02:30:51', 'oiasdhfoih', 1),
+(205, 2, 5, '2018-05-06 03:05:29', 'hlw', 1),
+(206, 5, 2, '2018-05-06 03:05:47', 'hi', 1),
+(207, 2, 5, '2018-05-06 03:05:48', '', 1),
+(208, 2, 5, '2018-05-06 03:05:51', '', 1),
+(209, 2, 5, '2018-05-06 03:05:52', '', 1),
+(210, 2, 5, '2018-05-06 03:05:08', 'asdf', 1),
+(211, 2, 5, '2018-05-06 03:05:26', '', 1),
+(212, 2, 5, '2018-05-06 03:05:12', '', 1),
+(213, 2, 5, '2018-05-06 03:05:12', '', 1),
+(214, 7, 1, '2018-05-09 09:05:24', 'hlw', 1),
+(215, 1, 7, '2018-05-09 09:05:37', 'blw', 1),
+(216, 1, 7, '2018-05-09 09:05:49', '?', 1),
+(217, 7, 1, '2018-05-09 09:05:38', '?', 1),
+(218, 7, 1, '2018-05-09 09:05:00', '.', 1),
+(219, 7, 1, '2018-05-09 09:05:31', 'check', 1),
+(220, 7, 1, '2018-05-09 09:05:52', 'again', 1),
+(221, 7, 1, '2018-05-09 09:05:05', '', 1),
+(222, 7, 1, '2018-05-09 09:05:13', 'and', 1),
+(223, 1, 7, '2018-05-09 09:05:23', 'hoise?', 1),
+(224, 7, 1, '2018-05-09 09:05:15', 'mone hosse', 1),
+(225, 1, 7, '2018-05-09 09:05:23', 'hoise to', 1),
+(226, 1, 7, '2018-05-09 09:05:43', 'but still there are some problem', 1),
+(227, 5, 1, '2018-05-11 09:05:47', 'hi', 1),
+(228, 1, 5, '2018-05-11 09:05:57', 'hlw', 1),
+(229, 1, 12, '2018-05-11 11:05:32', 'hey shabuz', 1),
+(230, 7, 1, '2018-06-06 23:18:10', 'hlw', 1),
+(231, 1, 7, '2018-06-06 23:18:15', 'hi', 1);
 
 -- --------------------------------------------------------
 
@@ -578,6 +608,29 @@ INSERT INTO `tbl_music` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_password_token`
+--
+
+CREATE TABLE `tbl_password_token` (
+  `id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `token` text NOT NULL,
+  `verified` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_password_token`
+--
+
+INSERT INTO `tbl_password_token` (`id`, `email`, `token`, `verified`) VALUES
+(1, 'jalaluddin_csse14@yahoo.com', 'e591bc4aced695834490d0254974685d0d2a79aa', 1),
+(2, 'jalaluddin.csse14@gmail.com', '4fba2d6505249f99ca3a5cb5fc72a8164a1fcac4', 0),
+(3, 'jalaluddin.csse14@gmail.com', '2d8bec05e1c186446fb7b7680c47c38f15e4fa7f', 1),
+(4, 'jalaluddin.csse14@gmail.com', '916b9f5215bcb4b8182ae07a65f559a41979e690', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_per_address`
 --
 
@@ -594,7 +647,7 @@ CREATE TABLE `tbl_per_address` (
 --
 
 INSERT INTO `tbl_per_address` (`per_uid`, `per_house`, `per_road`, `per_area`, `per_police_station`) VALUES
-(1, '21/A', '10', 'Takshal', 2),
+(1, '21', '02', 'Nikunja-2', 6),
 (2, '30', '2', 'Khilkhet', 1),
 (3, '2', '02', 'Takshal', NULL),
 (4, NULL, NULL, NULL, 9);
@@ -643,7 +696,7 @@ CREATE TABLE `tbl_pr_address` (
 --
 
 INSERT INTO `tbl_pr_address` (`pr_uid`, `pr_house`, `pr_road`, `pr_area`, `pr_police_station`) VALUES
-(1, '21', '2', 'Nikunja-2', 6),
+(1, '', '', '', 6),
 (2, '20', '1', 'Banani', 2),
 (3, '21', '0', '1924', 1),
 (4, NULL, NULL, NULL, 6),
@@ -669,6 +722,29 @@ CREATE TABLE `tbl_registration_req` (
   `number1` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_registration_token`
+--
+
+CREATE TABLE `tbl_registration_token` (
+  `id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `token` text NOT NULL,
+  `verified` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_registration_token`
+--
+
+INSERT INTO `tbl_registration_token` (`id`, `email`, `token`, `verified`) VALUES
+(9, 'jalaluddin.csse14@gmail.com', '2dcab3e2ad349eace8daabf609f334efa325bd26', 1),
+(10, 'jalaluddin.csse14@gmail.com', '45f072da1a7b861f8404a2ff51203073f33ad552', 1),
+(11, 'jalaluddin_csse14@yahoo.com', 'e899e5d830134e8844edea70007f6314d2d3e5e6', 0),
+(12, 'jalaluddin_csse14@yahoo.com', 'd17b589c34cdf7b1bb5144253114c2ae799513fe', 0);
 
 -- --------------------------------------------------------
 
@@ -746,7 +822,10 @@ INSERT INTO `tbl_search` (`id`, `uid`, `min_age`, `max_age`, `min_height`, `max_
 (54, 1, 18, 27, NULL, NULL, 1, 2),
 (55, 1, 18, 27, NULL, NULL, 1, 1),
 (56, 16, 18, 24, NULL, NULL, 1, 2),
-(57, 3, 18, 24, NULL, NULL, 1, 1);
+(57, 3, 18, 24, NULL, NULL, 1, 1),
+(58, 14, 24, 28, NULL, NULL, NULL, NULL),
+(59, 14, NULL, NULL, NULL, NULL, 1, NULL),
+(60, 1, 24, 28, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -805,18 +884,18 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`uid`, `fname`, `mname`, `lname`, `uname`, `dob`, `blood`, `gender`, `email`, `number1`, `number2`, `password`, `propic`, `height`, `weight`, `complexion`, `religion`, `marital_status`, `children`, `annual_income`, `bio`, `last_login`) VALUES
-(1, 'mushfiqur', NULL, 'tushar', 'user', '1995-02-01', 1, 1, 'xfx@gmail.com', '01676167636', NULL, 'user', 'propic/user.png', 5.4, 70, 2, 1, 1, 0, 10, '', '2018-05-03 07:37:25'),
-(2, 'userf', 'userm', 'userl', 'u', '1990-01-02', 1, 1, 'user@mail.com', '0155', '0122', 'u', 'propic/u.jpg', 4, 55, 2, 1, 1, 2, 300000000, 'nothing', '2018-05-03 04:08:02'),
-(3, 'Siam', 'Hasan', 'Evan', 'a', '1995-12-05', 1, 2, 'siam@gmail.com', '11111111111', NULL, 'a', 'propic/a.jpg', 6, 70, 2, 1, 1, 900, 1300, '', '2018-05-05 03:36:27'),
+(1, 'mushfiqur', '', 'tushar', 'user', '1995-02-01', 1, 1, 'xfx@gmail.com', '01676167636', '', 'user', 'propic/user.png', 5.6, 70, 2, 1, 2, 0, 0, '', '2018-05-11 12:10:14'),
+(2, 'userf', 'userm', 'userl', 'u', '1990-01-02', 1, 1, 'user@mail.com', '0155', '0122', 'u', 'propic/u.jpg', 4, 55, 2, 1, 1, 2, 300000000, 'nothing', '2018-05-08 07:15:38'),
+(3, 'Siam', 'Hasan', 'Evan', 'a', '1995-12-05', 1, 2, 'siam@gmail.com', '11111111111', NULL, 'a', 'propic/a.png', 6, 70, 2, 1, 1, 900, 1300, '', '2018-05-05 03:36:27'),
 (4, 'Siam', 'Hasan', 'Evan', 'vv', '2001-12-18', 1, 1, 'siamhasan05@gmail.com', '01710987607', NULL, '0000', 'propic/vv.jpg', NULL, 60, 4, 1, 1, NULL, NULL, NULL, '2017-12-23 09:12:28'),
-(5, 'Ashik', 'Mahmud', 'Ashik', 'ashik', '1994-12-30', 1, 1, 'abc@gmail.com', '12345678', NULL, '1234', 'propic/ashik.jpg', NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2018-05-03 03:27:40'),
-(7, 'masud', '', 'rana', 'masud', '1990-01-01', 3, 1, 'masud@gmail.com', '0111111', NULL, 'masud', 'propic/masud.png', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, '2018-04-19 04:04:21'),
-(9, 'jalal', 'middle', 'uddin', 'aser', '2017-12-07', 3, 3, 'jalaluddin_csse14@yahoo.com', 'asdf', NULL, '1111', 'defaultpic/user.png', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, '2018-05-03 04:06:02'),
+(5, 'Ashik', 'Mahmud', 'Ashik', 'ashik', '1994-12-30', 1, 1, 'abc@gmail.com', '12345678', NULL, '1234', 'propic/ashik.jpg', NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2018-05-11 09:05:23'),
+(7, 'masud', '', 'rana', 'masud', '1990-01-01', 3, 1, 'masud@gmail.com', '0111111', NULL, 'masud', 'propic/masud.png', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, '2018-05-11 12:09:50'),
+(9, 'jalal', 'middle', 'uddin', 'aser', '2017-12-07', 3, 3, 'jalaluddin_csse14@yahoo.com', 'asdf', NULL, '1234', 'defaultpic/user.png', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, '2018-05-03 04:06:02'),
 (10, '1', 'd', 'adminlast', 'dwd', '2017-12-11', 1, 1, 'ddd', 'ddd', NULL, '12', 'defaultpic/user.png', NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2017-12-23 11:12:52'),
-(12, 'shabuz', 'mohammad', 'badsha', 'shabuz', '1991-10-20', 3, 3, 'shabuz@gmail.com', '01711111111', NULL, 'shabuz', 'defaultpic/user.png', NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2018-05-02 11:55:29'),
-(14, 'pepe', 'charlie', 'sylvia', 'pepe sylvia', '1999-01-01', 1, 1, 'pepe@yahoo.com', '01710987607', NULL, '11', 'propic/pepe sylvia.jpg', NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2018-05-03 04:05:28'),
+(12, 'shabuz', 'mohammad', 'badsha', 'shabuz', '1991-10-20', 3, 3, 'shabuz@gmail.com', '01711111111', NULL, 'shabuz', 'propic/shabuz.png', NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2018-05-11 11:53:18'),
+(14, 'pepe', 'charlie', 'sylvia', 'pepe sylvia', '1999-01-01', 1, 1, 'pepe@yahoo.com', '01710987607', NULL, '11', 'propic/pepe sylvia.jpg', NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2018-05-09 05:05:09'),
 (15, 'Anna', NULL, 'eve', 'eve', '1991-05-09', 7, 2, 'eve@mail.com', '54855844484', NULL, 'eve', 'defaultpic/user.png', NULL, NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL),
-(16, 'thor', 'hammer', 'asgard', 'odinson1', '1992-05-01', 1, 1, 'odinson1@gmail.com', '01676167636', NULL, '1', 'propic/odinson1.gif', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, NULL);
+(16, 'thor', 'hammer', 'asgard', 'odinson1', '1992-05-01', 1, 1, 'odinson1@gmail.com', '01676167636', NULL, '1', 'propic/odinson1.jpg', NULL, NULL, 1, 1, 1, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -840,14 +919,16 @@ INSERT INTO `tbl_user_hobby` (`uid`, `hobby`) VALUES
 (10, 1),
 (10, 5),
 (10, 4),
-(1, 6),
-(1, 1),
-(1, 4),
 (16, 6),
 (4, 4),
 (3, 6),
 (3, 2),
-(3, 1);
+(3, 1),
+(14, 4),
+(1, 6),
+(1, 1),
+(1, 7),
+(1, 4);
 
 -- --------------------------------------------------------
 
@@ -870,14 +951,16 @@ INSERT INTO `tbl_user_interest` (`uid`, `interest`) VALUES
 (10, 2),
 (10, 3),
 (10, 4),
-(1, 1),
-(1, 5),
-(1, 4),
 (16, 1),
 (16, 4),
 (4, 1),
 (3, 1),
-(3, 2);
+(3, 2),
+(14, 4),
+(1, 1),
+(1, 5),
+(1, 3),
+(1, 4);
 
 -- --------------------------------------------------------
 
@@ -899,14 +982,16 @@ INSERT INTO `tbl_user_music` (`uid`, `music`) VALUES
 (10, 2),
 (10, 1),
 (10, 3),
-(1, 2),
-(1, 1),
-(1, 3),
-(1, 4),
 (16, 1),
 (4, 1),
 (3, 2),
-(3, 1);
+(3, 1),
+(14, 2),
+(14, 4),
+(1, 2),
+(1, 1),
+(1, 3),
+(1, 4);
 
 -- --------------------------------------------------------
 
@@ -928,11 +1013,13 @@ INSERT INTO `tbl_user_sports` (`uid`, `sport`) VALUES
 (10, 3),
 (10, 1),
 (10, 2),
+(16, 3),
+(3, 2),
+(14, 1),
+(14, 4),
 (1, 3),
 (1, 2),
-(1, 4),
-(16, 3),
-(3, 2);
+(1, 4);
 
 -- --------------------------------------------------------
 
@@ -1632,6 +1719,12 @@ ALTER TABLE `tbl_music`
   ADD KEY `id_2` (`id`);
 
 --
+-- Indexes for table `tbl_password_token`
+--
+ALTER TABLE `tbl_password_token`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_per_address`
 --
 ALTER TABLE `tbl_per_address`
@@ -1661,6 +1754,12 @@ ALTER TABLE `tbl_pr_address`
 --
 ALTER TABLE `tbl_registration_req`
   ADD PRIMARY KEY (`uid`);
+
+--
+-- Indexes for table `tbl_registration_token`
+--
+ALTER TABLE `tbl_registration_token`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_religion`
@@ -1776,12 +1875,12 @@ ALTER TABLE `tbl_family_type`
 -- AUTO_INCREMENT for table `tbl_favorite`
 --
 ALTER TABLE `tbl_favorite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `tbl_friend`
 --
 ALTER TABLE `tbl_friend`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `tbl_friend_req`
 --
@@ -1806,16 +1905,21 @@ ALTER TABLE `tbl_interest`
 -- AUTO_INCREMENT for table `tbl_marital_status`
 --
 ALTER TABLE `tbl_marital_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_message`
 --
 ALTER TABLE `tbl_message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=204;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
 --
 -- AUTO_INCREMENT for table `tbl_music`
 --
 ALTER TABLE `tbl_music`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `tbl_password_token`
+--
+ALTER TABLE `tbl_password_token`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_police_station`
@@ -1828,6 +1932,11 @@ ALTER TABLE `tbl_police_station`
 ALTER TABLE `tbl_registration_req`
   MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `tbl_registration_token`
+--
+ALTER TABLE `tbl_registration_token`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
 -- AUTO_INCREMENT for table `tbl_religion`
 --
 ALTER TABLE `tbl_religion`
@@ -1836,7 +1945,7 @@ ALTER TABLE `tbl_religion`
 -- AUTO_INCREMENT for table `tbl_search`
 --
 ALTER TABLE `tbl_search`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 --
 -- AUTO_INCREMENT for table `tbl_sports`
 --

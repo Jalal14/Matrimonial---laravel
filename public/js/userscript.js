@@ -1,6 +1,7 @@
 'use strict';
 /*registration validation*/
 $(document).ready(function() {
+    $(".loader").hide();
 	$( function() {
 		$( "#dob" ).datepicker({
 			dateFormat: "yy-mm-dd",
@@ -155,17 +156,23 @@ function register() {
 			number 	: 	$("input[name=contact]").val(),
 			password: 	$("input[name=pass]").val()
 		},
+        beforeSend	: function(){
+            $(".loader").show();
+		},
 		success	: function(response) {
+            $(".loader").hide();
 			if (response==1) {
 				$( "#regMsg" ).addClass( "success" );
-				$("#regMsg").html('<h3>*Successfully registered, please wait for activation.</h3>');
+				$("#regMsg").html('<h3>*Successfully registered.<br>Mail has been sent, please verify your email.</h3>');
 			}else{
 				$( "#regMsg" ).addClass( "error" );
 				$("#regMsg").html('<h3>*Error occured, please try again</h3>');
 			}
 		},
 		error	:function(data) {
-			alert('Error occured, please try again');
+            $(".loader").hide();
+            $( "#regMsg" ).addClass( "error" );
+            $("#regMsg").html('<h3>*Error occured, please try again</h3>');
 		}
 	});
 }

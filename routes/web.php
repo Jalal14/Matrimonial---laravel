@@ -20,6 +20,14 @@ Route::post('/', 'PublicController@search')->name('public.search');
 
 Route::post('/login', 'LoginController@userVerify')->name('login.userVerify');
 
+Route::get('/password/reset', 'PasswordController@index')->name('password.index');
+Route::post('/password/reset', 'PasswordController@resetRequest')->name('password.resetRequest');
+
+Route::get('/password/{token}/{id}', 'PasswordController@passToken')->name('password.passToken');
+
+Route::get('/password/reset-password', 'PasswordController@edit')->name('password.edit');
+Route::post('/password/reset-password', 'PasswordController@update')->name('password.update');
+
 Route::get('/ajax/login', 'UserAjaxController@verify')->name('userAjax.verify');
 
 Route::get('/ajax/checkUsername', 'UserAjaxController@checkUsername')->name('userAjax.checkUsername');
@@ -29,6 +37,8 @@ Route::get('/ajax/checkEmail', 'UserAjaxController@checkEmail')->name('userAjax.
 Route::get('/ajax/store', 'UserAjaxController@store')->name('userAjax.store');
 
 Route::post('/registration', 'RegistrationController@store')->name('registration.store');
+
+Route::get('/registration/{token}/{id}', 'RegistrationController@regToken')->name('registration.regToken');
 
 Route::group(['middleware' => ['userSess']], function (){
 
@@ -118,6 +128,14 @@ Route::group(['middleware' => ['userSess']], function (){
 Route::get('/admin/login', 'LoginController@adminLogin' )->name('login.admin');
 
 Route::post('/admin/login', 'LoginController@adminVerify' )->name('login.adminVerify');
+
+Route::get('/admin/reset-password', 'AdminPasswordController@index' )->name('adminPassword.index');
+Route::post('/admin/reset-password', 'AdminPasswordController@resetRequest' )->name('adminPassword.resetRequest');
+
+Route::get('/admin/password/{token}/{id}', 'AdminPasswordController@passToken')->name('adminPassword.passToken');
+
+Route::get('/admin/password/reset-password', 'AdminPasswordController@edit')->name('adminPassword.edit');
+Route::post('/admin/password/reset-password', 'AdminPasswordController@update')->name('adminPassword.update');
 
 Route::group(['middleware' => ['adminSess']], function (){
     Route::get('/admin', 'AdminController@index')->name('admin.index');

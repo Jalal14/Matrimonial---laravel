@@ -33,9 +33,6 @@
 		                        <input type="password" name="password" id="password" class="form-control" placeholder="Enter password">
 		                    </div>
 						</div>
-						<!-- <div class="checkbox">
-		  				<label><input type="checkbox" value="">Remember me</label>
-		  				</div> -->
 		  				@if($errors->any())
 		  					@foreach($errors->all() as $error)
 								<p class="error">* {{$error}}</p>
@@ -47,6 +44,7 @@
 							@endif
 		  				</div>
 		  				<input type="submit" class="btn btn-success btn-block" value="Login">
+						<a href="{{route('adminPassword.index')}}">Forgot password?</a>
 					</form>
 				</div>
 			</div>	
